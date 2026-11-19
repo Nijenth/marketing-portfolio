@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recapwell Onboarding Emails · Nijandhan</title>
+<meta name="description" content="Conversion copywriting case study: a 14-day free-trial onboarding email sequence for Recapwell, a fictional client-reporting tool, with behaviour-based branches and a test plan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+body{--accent:var(--c1);--accent-soft:var(--c1-soft)}
+.notice{display:inline-flex;gap:8px;align-items:center;background:var(--c1-soft);color:var(--c1);border-radius:999px;padding:6px 12px;font-size:.8rem;font-weight:600;margin-bottom:1.2rem}
+.meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:26px;color:var(--ink-2);font-size:.9rem}
+.meta b{color:var(--ink);display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px}
+.stats{display:grid;gap:14px;margin-top:34px}
+@media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.stat strong{display:block;font-family:Fraunces,serif;font-size:1.7rem;color:var(--c1);line-height:1.1}
+.stat span{font-size:.88rem;color:var(--ink-2)}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.toc a{font-size:.82rem;text-decoration:none;color:var(--ink-2);border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px}
+.two{display:grid;gap:16px;margin-top:24px}
+@media(min-width:800px){.two{grid-template-columns:1fr 1fr}}
+.kv dt{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600}
+.kv dd{margin:.15rem 0 1rem;color:var(--ink-2)}
+.kv dd b{color:var(--ink)}
+.note{font-size:.84rem;color:var(--muted)}
+.card h3.t{font-family:Inter,sans-serif;font-size:1rem;font-weight:700;margin-bottom:.6rem}
+
+/* sequence map */
+.map{position:relative;margin-top:28px;padding-left:28px}
+.map::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.seq{position:relative;margin-bottom:14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;gap:4px}
+@media(min-width:760px){.seq{grid-template-columns:120px 1fr auto;align-items:center;gap:16px}}
+.seq::before{content:"";position:absolute;left:-25px;top:18px;width:14px;height:14px;border-radius:50%;background:var(--c1);box-shadow:0 0 0 4px var(--bg)}
+.seq.trig::before{background:var(--surface);border:3px solid var(--c2)}
+.seq .when{font-weight:700;color:var(--ink);font-size:.9rem}
+.seq .what{color:var(--ink-2);font-size:.92rem}
+.seq .what b{color:var(--ink)}
+.seq a{font-size:.82rem;font-weight:600;text-decoration:none;white-space:nowrap}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.85rem;color:var(--ink-2);margin-top:14px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:7px;vertical-align:-1px}
+
+/* email mockups: always light, like a real inbox */
+.email{display:grid;gap:18px;margin-top:22px;align-items:start}
+@media(min-width:900px){.email{grid-template-columns:1.25fr 1fr}}
+.mail{background:#fff;color:#2b2f3a;border:1px solid #e3e5ea;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);font-family:Inter,system-ui,sans-serif}
+.mail .inbox{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;padding:12px 16px;background:#f6f7f9;border-bottom:1px solid #e3e5ea}
+.mail .av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#2f5bd6,#5b8cff);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.85rem}
+.mail .from{font-size:.8rem;color:#5f6470;line-height:1.35;min-width:0}
+.mail .from b{color:#141a2e;font-size:.86rem}
+.mail .subj{display:block;color:#141a2e;font-weight:700;font-size:.92rem;overflow-wrap:anywhere}
+.mail .prev{display:block;color:#6b7080;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mail .time{font-size:.74rem;color:#8a8f9c;white-space:nowrap;align-self:start}
+.mail .body{padding:22px 22px 24px;font-size:.94rem;line-height:1.62}
+.mail .body p{margin:0 0 .9rem}
+.mail .body ul,.mail .body ol{margin:0 0 .9rem;padding-left:20px}
+.mail .body li{margin-bottom:4px}
+.mail .body b{color:#141a2e}
+.mail .mf{background:#fff3c4;color:#6a5200;border-radius:4px;padding:0 4px;font-size:.88em;font-family:ui-monospace,Consolas,monospace}
+.mail .btn{display:inline-block;background:#2f5bd6;color:#fff;font-weight:600;border-radius:8px;padding:11px 18px;font-size:.9rem;margin:2px 0 14px}
+.mail .sig{color:#5f6470;font-size:.88rem}
+.mail .ps{border-top:1px solid #eceef2;padding-top:12px;margin-top:6px;font-size:.88rem;color:#4b5060}
+.mail .box{background:#f6f8fd;border:1px solid #e3e8f5;border-radius:10px;padding:12px 14px;margin:0 0 .9rem;font-size:.9rem}
+.why{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.why .row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.why .tag{font-size:.72rem;font-weight:700;border-radius:6px;padding:3px 8px}
+.tag.time{background:var(--c1-soft);color:var(--c1)}
+.tag.trg{background:var(--c2-soft);color:var(--c2)}
+.tag.goal{background:var(--c3-soft);color:var(--c3)}
+.why h3{font-family:Inter,sans-serif;font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.why p{color:var(--ink-2);font-size:.92rem;margin:0 0 .7rem}
+.why ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:.9rem}
+.why li{margin-bottom:5px}
+.len{white-space:nowrap;font-size:.72rem;font-weight:700;padding:2px 7px;border-radius:6px;background:var(--c3-soft);color:var(--c3)}
+.len.over{background:#fbe6e4;color:#b4302a}
+.email-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:56px}
+.email-head .n{font-family:Fraunces,serif;font-size:1.9rem;color:var(--c1);line-height:1}
+.email-head h3{font-size:1.35rem}
+
+/* tables */
+.tblwrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:6px 14px;margin-top:20px}
+.tbl{width:100%;border-collapse:collapse;font-size:.9rem;min-width:600px}
+.tbl th,.tbl td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.tbl th{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.tbl td{color:var(--ink-2)}
+.tbl td:first-child{font-weight:600;color:var(--ink)}
+</style>
+</head>
+<body class="r1">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../../">Nijandhan</a>
+    <nav><a href="../" aria-current="page">Copywriting</a><a href="../../paid-media/">Paid media</a><a href="../../seo-content/">SEO &amp; content</a><a href="../../#contact">Contact</a></nav>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle colour theme">Theme</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero small">
+    <span class="crumb"><a href="../../">Portfolio</a> / <a href="../">Copywriting</a> / Recapwell onboarding emails</span>
+    <span class="notice">Fictional brand · emails written for this portfolio · never sent</span>
+    <h1>From free trial to paying customer</h1>
+    <p class="lede">A 14-day onboarding sequence for Recapwell. Its job is to get each new trial user to one moment, seeing their first client report, and then make paying feel like the obvious next step.</p>
+    <div class="meta">
+      <div><b>Trigger</b>Free-trial signup</div>
+      <div><b>Goal</b>First report built, then trial → paid</div>
+      <div><b>Length</b>14-day trial, 7 emails</div>
+      <div><b>Related</b><a href="../recapwell-landing-page/">Landing page</a> · <a href="../../paid-media/recapwell-campaign/">Ads</a></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>7</strong><span>emails: 5 on a schedule, 2 triggered by behaviour</span></div>
+      <div class="stat"><strong>1</strong><span>activation moment everything points to</span></div>
+      <div class="stat"><strong>1</strong><span>main call to action per email</span></div>
+      <div class="stat"><strong>0</strong><span>surprise charges: no card means no auto-billing</span></div>
+    </div>
+    <nav class="toc" aria-label="On this page"><a href="#brief">Brief</a><a href="#map">Sequence map</a><a href="#e1">The emails</a><a href="#measure">Metrics &amp; tests</a></nav>
+  </section>
+
+  <!-- BRIEF -->
+  <section id="brief">
+    <span class="eyebrow">01 · Brief</span>
+    <h2>What the sequence has to do</h2>
+    <div class="two">
+      <div class="card">
+        <dl class="kv">
+          <dt>Reader</dt>
+          <dd>An agency owner or account manager who just started a free trial, usually after an ad or a search. Busy, curious, and easily distracted by client work.</dd>
+          <dt>The activation moment</dt>
+          <dd><b>Seeing their first client's finished report</b>, with the plain-English summary on top. Trial users who reach this moment understand the product; those who don't usually forget they signed up.</dd>
+          <dt>Business goal</dt>
+          <dd>Turn trials into paying customers at $89/month. The <a href="../../paid-media/recapwell-campaign/#economics">ad plan</a> assumes 20% of trials convert; this sequence is how that number is earned.</dd>
+        </dl>
+      </div>
+      <div class="card">
+        <h3 class="t">Principles</h3>
+        <ul style="margin:0;padding-left:18px;color:var(--ink-2);font-size:.95rem">
+          <li style="margin-bottom:8px"><b style="color:var(--ink)">Behaviour beats the calendar.</b> Users who connect a client get a different email from users who don't.</li>
+          <li style="margin-bottom:8px"><b style="color:var(--ink)">One email, one job, one button.</b> Every email asks for a single next step.</li>
+          <li style="margin-bottom:8px"><b style="color:var(--ink)">Written by a person.</b> Sent from Sam, a (fictional) co-founder, in plain text, so it reads like a note and invites replies.</li>
+          <li><b style="color:var(--ink)">Honest endings.</b> No card was taken, so the last emails explain exactly what happens when the trial ends: nothing, unless they choose a plan.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section id="map">
+    <span class="eyebrow">02 · Sequence map</span>
+    <h2>Seven emails across the trial</h2>
+    <div class="legend"><span><i style="background:var(--c1)"></i>Scheduled (by trial day)</span><span><i style="border:3px solid var(--c2)"></i>Triggered (by what the user does)</span></div>
+    <div class="map">
+      <div class="seq"><span class="when">Day 0</span><span class="what"><b>Welcome:</b> one job today, connect your first client</span><a href="#e1">Email 1 →</a></div>
+      <div class="seq trig"><span class="when">On first report</span><span class="what"><b>Celebrate:</b> "{client}'s first report is ready", review the summary</span><a href="#e2">Email 2 →</a></div>
+      <div class="seq trig"><span class="when">Day 2, if stuck</span><span class="what"><b>Rescue:</b> no client connected yet, here's the shortcut, or reply for help</span><a href="#e3">Email 3 →</a></div>
+      <div class="seq"><span class="when">Day 4</span><span class="what"><b>Teach:</b> how to write summaries clients actually read</span><a href="#e4">Email 4 →</a></div>
+      <div class="seq"><span class="when">Day 7</span><span class="what"><b>Expand:</b> add the rest of your clients and see the time saved</span><a href="#e5">Email 5 →</a></div>
+      <div class="seq"><span class="when">Day 11</span><span class="what"><b>Reassure:</b> the three questions agencies ask before switching</span><a href="#e6">Email 6 →</a></div>
+      <div class="seq"><span class="when">Day 13</span><span class="what"><b>Decide:</b> trial ends tomorrow, here's what you keep</span><a href="#e7">Email 7 →</a></div>
+    </div>
+    <p class="note">Users who upgrade early leave the sequence immediately. Nobody should get a "your trial is ending" email after they've paid.</p>
+  </section>
+
+  <!-- EMAILS -->
+  <section id="emails">
+    <span class="eyebrow">03 · The emails</span>
+    <h2>Each email, and why it's written that way</h2>
+    <p class="lede">Yellow fields are filled in automatically for each user. Subject-line lengths are counted live; around 45 characters or fewer keeps them readable on phones.</p>
+
+    <!-- EMAIL 1 -->
+    <div class="email-head" id="e1"><span class="n">01</span><h3>Welcome</h3></div>
+    <div class="email">
+      <div class="mail">
+        <div class="inbox"><span class="av">S</span><div class="from"><b>Sam from Recapwell</b><span class="subj">Your first report is 10 minutes away</span><span class="prev">One job today: connect one client. That's it.</span></div><span class="time">Day 0</span></div>
+        <div class="body">
+          <p>Hi <span class="mf">{first_name}</span>,</p>
+          <p>Welcome to Recapwell. I'm Sam, one of the founders.</p>
+          <p>You don't need to set everything up today. There's just <b>one thing worth doing</b>: connect one client. Pick the one whose report you dread most.</p>
+          <p>It takes about 10 minutes, and then Recapwell builds their full report, summary and all, so you can see exactly what your clients would get.</p>
+          <span class="btn">Connect my first client</span>
+          <p>If anything's unclear, just reply. This comes straight to my inbox.</p>
+          <p class="sig">Sam<br>Co-founder, Recapwell</p>
+          <p class="ps">P.S. Your trial runs for 14 days and there's no card on file, so there's nothing to cancel.</p>
+        </div>
+      </div>
+      <div class="why">
+        <div class="row"><span class="tag time">Day 0 · on signup</span><span class="tag goal">Goal: first client connected</span></div>
+        <h3>Why it works</h3>
+        <p>New users are most motivated in the first hour. Instead of a tour of every feature, the email shrinks the task to <b>one client</b>, and makes it personal with "the one whose report you dread most".</p>
+        <ul><li>Subject promises the reward, not a "welcome"</li><li>Reply invitation builds trust and catches confused users</li><li>P.S. removes the "will I be charged?" worry early</li></ul>
+      </div>
+    </div>
+
+    <!-- EMAIL 2 -->
+    <div class="email-head" id="e2"><span class="n">02</span><h3>First report ready</h3></div>
+    <div class="email">
+      <div class="mail">
+        <div class="inbox"><span class="av">S</span><div class="from"><b>Sam from Recapwell</b><span class="subj">{client_name}'s first report is ready</span><span class="prev">Read the summary first. That's what your client will read.</span></div><span class="time">Triggered</span></div>
+        <div class="body">
+          <p>Hi <span class="mf">{first_name}</span>,</p>
+          <p>Recapwell just finished <b><span class="mf">{client_name}</span>'s report for <span class="mf">{month}</span></b>.</p>
+          <p>Before you look at any charts, read the three sentences at the top. That summary is the part your client will actually read, so make sure it sounds like you:</p>
+          <ul><li>Change any wording you'd say differently</li><li>Add one line about what you're doing next month</li><li>Hide any chart they don't care about</li></ul>
+          <span class="btn">Review the report</span>
+          <p>Nothing is sent to your client until you say so.</p>
+          <p class="sig">Sam</p>
+        </div>
+      </div>
+      <div class="why">
+        <div class="row"><span class="tag trg">Triggered · first report built</span><span class="tag goal">Goal: reach the "aha" moment</span></div>
+        <h3>Why it works</h3>
+        <p>This is the activation moment, so the email arrives the moment it happens. The client's name in the subject makes it feel like real work, not marketing.</p>
+        <ul><li>Points straight to the differentiator: the summary</li><li>Editing it creates ownership: it becomes <em>their</em> report</li><li>"Nothing is sent until you say so" answers the fear of losing control</li></ul>
+      </div>
+    </div>
+
+    <!-- EMAIL 3 -->
+    <div class="email-head" id="e3"><span class="n">03</span><h3>Stuck? (only if no client connected)</h3></div>
+    <div class="email">
+      <div class="mail">
+        <div class="inbox"><span class="av">S</span><div class="from"><b>Sam from Recapwell</b><span class="subj">Stuck on step one?</span><span class="prev">Most people get stuck on the same thing. Here's the shortcut.</span></div><span class="time">Day 2</span></div>
+        <div class="body">
+          <p>Hi <span class="mf">{first_name}</span>,</p>
+          <p>I noticed you haven't connected a client yet. Totally normal: client work doesn't stop because you started a trial.</p>
+          <p>When people get stuck, it's usually one of these:</p>
+          <div class="box"><b>"I don't have admin access to the client's accounts."</b><br>You only need read access. Send your client this <u>one-click access request</u> and you're done.</div>
+          <div class="box"><b>"I'm not sure which client to start with."</b><br>Pick one with Google Ads or GA4. Those reports build fastest.</div>
+          <span class="btn">Connect a client now</span>
+          <p>Or reply with "help" and I'll set it up with you on a 15-minute call.</p>
+          <p class="sig">Sam</p>
+        </div>
+      </div>
+      <div class="why">
+        <div class="row"><span class="tag trg">Triggered · Day 2, no client connected</span><span class="tag goal">Goal: rescue stalled trials</span></div>
+        <h3>Why it works</h3>
+        <p>Users who don't activate in the first days rarely come back on their own. This email names the real blockers instead of repeating "don't forget to set up!".</p>
+        <ul><li>"Totally normal" removes guilt, which makes people less likely to ignore it</li><li>Solves the most common blocker (access) inside the email</li><li>A human offer ("reply help") catches users a button won't</li></ul>
+      </div>
+    </div>
+
+    <!-- EMAIL 4 -->
+    <div class="email-head" id="e4"><span class="n">04</span><h3>Teach the differentiator</h3></div>
+    <div class="email">
+      <div class="mail">
+        <div class="inbox"><span class="av">S</span><div class="from"><b>Sam from Recapwell</b><span class="subj">Clients read three sentences. Make them count.</span><span class="prev">A simple formula for report summaries clients actually read.</span></div><span class="time">Day 4</span></div>
+        <div class="body">
+          <p>Hi <span class="mf">{first_name}</span>,</p>
+          <p>Most clients read the first few lines of a report and stop. So those lines carry the whole relationship.</p>
+          <p>Here's the formula Recapwell's summaries follow, and you can use it anywhere:</p>
+          <ol><li><b>What changed:</b> the one number that matters most to this client</li><li><b>Why:</b> the cause, in plain words</li><li><b>What's next:</b> the action you're taking</li></ol>
+          <div class="box"><b>Before:</b> "Sessions +12%, CTR 3.4%, CPC down 8% MoM."<br><b>After:</b> "Leads rose this month because the new landing page converts better. Next, we'll move more budget to the ads that feed it."</div>
+          <span class="btn">Edit your summaries</span>
+          <p class="sig">Sam</p>
+        </div>
+      </div>
+      <div class="why">
+        <div class="row"><span class="tag time">Day 4</span><span class="tag goal">Goal: deepen value, build habit</span></div>
+        <h3>Why it works</h3>
+        <p>A useful email, not a sales email. It teaches a skill the reader keeps even if they never buy, which builds trust, and it happens to be exactly what the product does best.</p>
+        <ul><li>Before/after example makes the idea instantly clear</li><li>Same theme as the <a href="../../seo-content/recapwell-content-strategy/">content strategy</a>, so the brand says one consistent thing</li></ul>
+      </div>
+    </div>
+
+    <!-- EMAIL 5 -->
+    <div class="email-head" id="e5"><span class="n">05</span><h3>Add more clients</h3></div>
+    <div class="email">
+      <div class="mail">
+        <div class="inbox"><span class="av">S</span><div class="from"><b>Sam from Recapwell</b><span class="subj">One client done. What about the other {client_count}?</span><span class="prev">Here's what next month looks like with all of them on autopilot.</span></div><span class="time">Day 7</span></div>
+        <div class="body">
+          <p>Hi <span class="mf">{first_name}</span>,</p>
+          <p>You're halfway through your trial, and <span class="mf">{client_name}</span>'s report is already handled.</p>
+          <p>When you signed up, you said you report to <b><span class="mf">{client_count}</span> clients</b>. If each one takes about <span class="mf">{hours_per_report}</span> hours today, that's roughly <b><span class="mf">{hours_saved}</span> hours a month</b> you could get back.</p>
+          <p>Connecting the rest takes a few minutes each, and next month's reports will build themselves.</p>
+          <span class="btn">Add my other clients</span>
+          <p class="sig">Sam</p>
+        </div>
+      </div>
+      <div class="why">
+        <div class="row"><span class="tag time">Day 7</span><span class="tag goal">Goal: more clients = more value = more likely to pay</span></div>
+        <h3>Why it works</h3>
+        <p>A trial with one client feels like a test. A trial with all clients feels like the new way of working, and that's much harder to give up on day 14.</p>
+        <ul><li>Uses the user's own numbers (from signup), the same idea as the landing page calculator</li><li>Halfway point creates gentle urgency without pressure</li></ul>
+      </div>
+    </div>
+
+    <!-- EMAIL 6 -->
+    <div class="email-head" id="e6"><span class="n">06</span><h3>Answer the doubts</h3></div>
+    <div class="email">
+      <div class="mail">
+        <div class="inbox"><span class="av">S</span><div class="from"><b>Sam from Recapwell</b><span class="subj">"Will my clients notice?" and 2 other questions</span><span class="prev">The three things agencies ask me before switching.</span></div><span class="time">Day 11</span></div>
+        <div class="body">
+          <p>Hi <span class="mf">{first_name}</span>,</p>
+          <p>Before agencies switch, they usually ask me the same three things:</p>
+          <p><b>"Will my clients notice the change?"</b><br>Only that reports arrive on time and are easier to read. They carry your logo and come from your email address.</p>
+          <p><b>"What if a report says something wrong?"</b><br>Every report waits for your review by default. You can edit anything before it goes out.</p>
+          <p><b>"Is my clients' data safe?"</b><br>Recapwell only has read-only access. It can see results but can't change a single campaign.</p>
+          <span class="btn">See this month's reports</span>
+          <p>Got a different question? Hit reply.</p>
+          <p class="sig">Sam</p>
+        </div>
+      </div>
+      <div class="why">
+        <div class="row"><span class="tag time">Day 11</span><span class="tag goal">Goal: remove reasons to say no</span></div>
+        <h3>Why it works</h3>
+        <p>Near the end of a trial, people stop thinking "is this useful?" and start thinking "is this risky?". This email answers the risk questions before the decision email arrives.</p>
+        <ul><li>Questions are written in the customer's words, in quotes</li><li>Short answers: no feature lists, just reassurance</li></ul>
+      </div>
+    </div>
+
+    <!-- EMAIL 7 -->
+    <div class="email-head" id="e7"><span class="n">07</span><h3>Trial ending</h3></div>
+    <div class="email">
+      <div class="mail">
+        <div class="inbox"><span class="av">S</span><div class="from"><b>Sam from Recapwell</b><span class="subj">Your trial ends tomorrow</span><span class="prev">Here's what you keep, and what happens if you do nothing.</span></div><span class="time">Day 13</span></div>
+        <div class="body">
+          <p>Hi <span class="mf">{first_name}</span>,</p>
+          <p>Your Recapwell trial ends tomorrow. Here's where you are:</p>
+          <div class="box"><b><span class="mf">{reports_built}</span> reports built</b> for <span class="mf">{clients_connected}</span> clients<br>About <b><span class="mf">{hours_saved}</span> hours a month</b> back, based on your numbers</div>
+          <p>To keep your reports building automatically, choose the plan: <b>$89/month for up to 15 clients</b>. Everything you've set up stays exactly as it is.</p>
+          <span class="btn">Keep my reports running</span>
+          <p>If you do nothing, your account simply pauses. There's no card on file, so you won't be charged, and your setup is saved for 30 days in case you come back.</p>
+          <p>Need a few more days? Reply and I'll extend your trial.</p>
+          <p class="sig">Sam</p>
+        </div>
+      </div>
+      <div class="why">
+        <div class="row"><span class="tag time">Day 13</span><span class="tag goal">Goal: convert to paid</span></div>
+        <h3>Why it works</h3>
+        <p>It opens with what the user has already built, so upgrading feels like <b>keeping</b> something, not buying something. People work harder to avoid losing what they have than to gain something new.</p>
+        <ul><li>CTA says "keep", not "buy" or "upgrade"</li><li>Honest about what happens if they do nothing, which builds trust and avoids angry "you charged me" emails</li><li>An extension offer catches users who were busy, not uninterested</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEASURE -->
+  <section id="measure">
+    <span class="eyebrow">04 · Metrics &amp; tests</span>
+    <h2>How to judge the sequence</h2>
+    <div class="tblwrap">
+      <table class="tbl">
+        <thead><tr><th>Metric</th><th>What it shows</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>Activation rate</td><td>Share of trials that build a first report</td><td>The most important number: emails 1–3 exist to raise it</td></tr>
+          <tr><td>Time to first report</td><td>How fast users reach the "aha" moment</td><td>Faster usually means more conversions</td></tr>
+          <tr><td>Click rate per email</td><td>Which emails move people to act</td><td>More reliable than open rates, which privacy features in mail apps inflate</td></tr>
+          <tr><td>Replies</td><td>Questions, blockers and objections</td><td>Every reply is research for the next version of the emails</td></tr>
+          <tr><td>Trial → paid rate</td><td>The business result</td><td>Ad plan assumes 20%; compare activated vs. non-activated users</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tblwrap">
+      <table class="tbl">
+        <thead><tr><th>#</th><th>Test</th><th>Hypothesis</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Email 1 subject: "Your first report is 10 minutes away" vs. "Welcome to Recapwell"</td><td>A specific, reward-focused subject gets more first clients connected on day 0.</td></tr>
+          <tr><td>2</td><td>Email 3 sent on day 1 vs. day 2</td><td>An earlier rescue catches users while the signup is still fresh.</td></tr>
+          <tr><td>3</td><td>Plain-text style vs. designed HTML template</td><td>Personal plain-text emails get more replies and clicks for a small B2B tool.</td></tr>
+          <tr><td>4</td><td>Email 7 with vs. without the progress box</td><td>Showing what's already built makes upgrading feel like keeping, and lifts conversion.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Recapwell and "Sam" are fictional, created for this portfolio. Any resemblance to a real company or person is unintended. These emails have never been sent. · © 2026 Nijandhan · <a href="../">Back to copywriting</a></div>
+</footer>
+<script src="../../assets/theme.js"></script>
+<script>
+// live subject-line length check (merge fields counted as typical values)
+document.querySelectorAll('.mail .subj').forEach(function(s){
+  var t=s.textContent.replace('{client_name}','Sample Client Co.').replace('{client_count}','14');
+  var n=t.length, b=document.createElement('span');
+  b.className='len'+(n>50?' over':''); b.textContent=n+' chars'; b.style.marginLeft='6px'; b.style.fontWeight='600';
+  s.appendChild(b);
+});
+</script>
+</body>
+</html>
