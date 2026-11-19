@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recapwell Landing Page · Nijandhan</title>
+<meta name="description" content="Conversion copywriting case study: the free-trial landing page for Recapwell, a fictional client-reporting tool for agencies, with message-matched headlines for three ad angles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+body{--accent:var(--c1);--accent-soft:var(--c1-soft)}
+.notice{display:inline-flex;gap:8px;align-items:center;background:var(--c1-soft);color:var(--c1);border-radius:999px;padding:6px 12px;font-size:.8rem;font-weight:600;margin-bottom:1.2rem}
+.meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:26px;color:var(--ink-2);font-size:.9rem}
+.meta b{color:var(--ink);display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px}
+.stats{display:grid;gap:14px;margin-top:34px}
+@media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.stat strong{display:block;font-family:Fraunces,serif;font-size:1.7rem;color:var(--c1);line-height:1.1}
+.stat span{font-size:.88rem;color:var(--ink-2)}
+.two{display:grid;gap:16px;margin-top:24px}
+@media(min-width:800px){.two{grid-template-columns:1fr 1fr}}
+.kv dt{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600}
+.kv dd{margin:.15rem 0 1rem;color:var(--ink-2)}
+.kv dd b{color:var(--ink)}
+.note{font-size:.84rem;color:var(--muted)}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.toc a{font-size:.82rem;text-decoration:none;color:var(--ink-2);border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px}
+.pin{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:700 .85rem Inter,sans-serif;background:var(--c1);color:var(--accent-ink);flex:none}
+
+/* variant switcher */
+.switch{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:26px 0 14px}
+.switch span{font-size:.85rem;color:var(--ink-2);margin-right:4px}
+.switch button{font:600 .85rem Inter,sans-serif;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);border-radius:999px;padding:7px 14px;cursor:pointer}
+.switch button[aria-pressed="true"]{background:var(--c1);border-color:var(--c1);color:var(--accent-ink)}
+
+/* the landing page mockup: always light, like a real product site */
+.browser{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff}
+.chrome{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface-2);border-bottom:1px solid var(--line)}
+.chrome i{width:10px;height:10px;border-radius:50%;background:var(--line);display:block}
+.chrome span{margin-left:10px;font-size:.78rem;color:var(--muted);background:var(--surface);padding:3px 12px;border-radius:6px;flex:1;max-width:340px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lp{--b:#2f5bd6;--b2:#e9efff;--ink:#141a2e;--ink2:#4b5470;--line:#e6e9f2;--soft:#f6f8fd;color:var(--ink2);font-family:Inter,system-ui,sans-serif;background:#fff}
+.lp h4,.lp h5{color:var(--ink);font-family:Inter,sans-serif;letter-spacing:-.02em;margin:0}
+.lp .s{position:relative;padding:48px 28px;border-bottom:1px solid var(--line)}
+.lp .s:last-child{border-bottom:0}
+.lp .s > .pin{position:absolute;top:14px;right:14px;box-shadow:0 0 0 4px #fff}
+.lp .in{max-width:880px;margin:0 auto}
+.lp .c{text-align:center}
+.lp .nav{display:flex;align-items:center;gap:18px;padding:14px 28px;border-bottom:1px solid var(--line);font-size:.86rem}
+.lp .nav b{color:var(--ink);font-size:1.02rem;display:flex;align-items:center;gap:8px;margin-right:auto}
+.lp .nav b i{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,#2f5bd6,#5b8cff);display:grid;place-items:center;color:#fff;font-style:normal;font-size:.8rem}
+.lp .nav span{white-space:nowrap}
+@media(max-width:620px){.lp .nav .hide{display:none}}
+.lp .btn-p{display:inline-block;background:var(--b);color:#fff;font-weight:600;border-radius:10px;padding:13px 22px;font-size:.95rem}
+.lp .btn-s{display:inline-block;border:1px solid var(--line);color:var(--ink);font-weight:600;border-radius:10px;padding:13px 22px;font-size:.95rem;background:#fff}
+.lp .nav .btn-p{padding:8px 14px;font-size:.82rem}
+.lp .hero{background:linear-gradient(180deg,#f3f6ff,#fff)}
+.lp .eyeb{display:inline-block;background:var(--b2);color:var(--b);font-weight:600;font-size:.78rem;border-radius:999px;padding:5px 12px;margin-bottom:16px}
+.lp .h1{font-size:clamp(1.9rem,4.6vw,3.1rem);line-height:1.08;font-weight:800;max-width:20ch;margin:0 auto 16px}
+.lp .lead{font-size:1.05rem;line-height:1.6;max-width:58ch;margin:0 auto 24px}
+.lp .row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.lp .micro{font-size:.8rem;margin-top:12px;opacity:.85}
+.lp .logos{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:26px}
+.lp .logos span{font-size:.78rem;border:1px solid var(--line);border-radius:8px;padding:5px 10px;background:#fff;color:var(--ink2)}
+.lp .h2{font-size:clamp(1.35rem,3vw,1.9rem);line-height:1.2;font-weight:800;margin-bottom:12px}
+.lp .pain{display:grid;gap:12px;margin-top:20px}
+@media(min-width:700px){.lp .pain{grid-template-columns:repeat(3,1fr)}}
+.lp .pain div{background:var(--soft);border-radius:12px;padding:16px;font-size:.93rem}
+.lp .pain b{display:block;color:var(--ink);margin-bottom:4px}
+.lp .steps{display:grid;gap:14px;margin-top:22px;counter-reset:st}
+@media(min-width:700px){.lp .steps{grid-template-columns:repeat(3,1fr)}}
+.lp .steps div{border:1px solid var(--line);border-radius:12px;padding:18px;font-size:.92rem}
+.lp .steps div::before{counter-increment:st;content:counter(st);display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--b2);color:var(--b);font-weight:700;margin-bottom:10px}
+.lp .steps b{display:block;color:var(--ink);margin-bottom:4px}
+.lp .diff{display:grid;gap:22px;align-items:center}
+@media(min-width:760px){.lp .diff{grid-template-columns:1fr 1fr}}
+.lp .report{border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(20,30,70,.08);overflow:hidden;font-size:.86rem}
+.lp .report .rh{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--soft);border-bottom:1px solid var(--line);font-size:.78rem}
+.lp .report .rh b{color:var(--ink)}
+.lp .report .sum{padding:14px;background:#fffbea;border-bottom:1px solid #f4e7b5}
+.lp .report .sum small{display:block;font-weight:700;color:#8a6a00;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.lp .report .sum p{margin:0;color:var(--ink);line-height:1.5}
+.lp .report .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px 14px}
+.lp .report .kpis div{background:var(--soft);border-radius:8px;padding:8px;font-size:.72rem}
+.lp .report .kpis b{display:block;color:var(--ink);font-size:.95rem}
+.lp .report .bars{display:flex;align-items:flex-end;gap:6px;height:56px;padding:0 14px 14px}
+.lp .report .bars i{flex:1;background:#cfdbff;border-radius:4px 4px 0 0}
+.lp .report .bars i.hi{background:var(--b)}
+.lp .benefits{display:grid;gap:12px;margin-top:20px}
+@media(min-width:700px){.lp .benefits{grid-template-columns:1fr 1fr}}
+.lp .benefits div{border:1px solid var(--line);border-radius:12px;padding:16px;font-size:.92rem}
+.lp .benefits b{display:block;color:var(--ink);margin-bottom:3px}
+.lp .calc{background:var(--soft);border-radius:16px;padding:22px;display:grid;gap:18px;margin-top:20px}
+@media(min-width:760px){.lp .calc{grid-template-columns:1fr 1fr;align-items:center}}
+.lp .calc label{display:block;font-size:.86rem;font-weight:600;color:var(--ink);margin-bottom:14px}
+.lp .calc label span{float:right;color:var(--b)}
+.lp .calc input[type=range]{width:100%;accent-color:#2f5bd6;margin-top:6px}
+.lp .calc .out{text-align:center}
+.lp .calc .out strong{display:block;font-size:2.6rem;font-weight:800;color:var(--b);line-height:1}
+.lp .calc .out small{font-size:.8rem}
+.lp .slots{display:grid;gap:12px;margin-top:20px}
+@media(min-width:700px){.lp .slots{grid-template-columns:1fr 1fr}}
+.lp .slot{border:2px dashed #c9d5f5;border-radius:12px;padding:16px;font-size:.88rem;position:relative}
+.lp .slot em{position:absolute;top:-10px;left:12px;background:var(--b);color:#fff;font-style:normal;font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px}
+.lp .sk{height:8px;border-radius:5px;background:#e6ebf7;margin:6px 0}
+.lp .price{max-width:420px;margin:20px auto 0;border:2px solid var(--b);border-radius:16px;padding:24px;text-align:left}
+.lp .price .amt{font-size:2.4rem;font-weight:800;color:var(--ink);line-height:1}
+.lp .price .amt small{font-size:.9rem;font-weight:500;color:var(--ink2)}
+.lp .price ul{list-style:none;padding:0;margin:16px 0 20px;font-size:.92rem}
+.lp .price li{padding:5px 0 5px 24px;position:relative}
+.lp .price li::before{content:"✓";position:absolute;left:0;color:var(--b);font-weight:800}
+.lp .price .btn-p{display:block;text-align:center}
+.lp details{border-bottom:1px solid var(--line);padding:14px 0}
+.lp summary{cursor:pointer;color:var(--ink);font-weight:600;font-size:.96rem}
+.lp details p{margin:8px 0 0;font-size:.92rem;line-height:1.55}
+.lp .final{background:linear-gradient(135deg,#1e2a5a,#2f5bd6);color:#e9eeff}
+.lp .final .h2{color:#fff}
+.lp .final .btn-p{background:#fff;color:#1e2a5a}
+
+/* rationale */
+.rat{display:grid;grid-template-columns:34px 1fr;gap:14px}
+.rat .fw{display:inline-block;font-size:.72rem;font-weight:600;color:var(--c1);background:var(--c1-soft);border-radius:6px;padding:2px 8px;margin:.1rem 6px .5rem 0}
+.rat p{color:var(--ink-2);font-size:.94rem;margin:0}
+.tblwrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:6px 14px;margin-top:20px}
+.tbl{width:100%;border-collapse:collapse;font-size:.9rem;min-width:600px}
+.tbl th,.tbl td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.tbl th{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.tbl td{color:var(--ink-2)}
+.tbl td:first-child{font-weight:600;color:var(--ink);white-space:nowrap}
+</style>
+</head>
+<body class="r1">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../../">Nijandhan</a>
+    <nav><a href="../" aria-current="page">Copywriting</a><a href="../../paid-media/">Paid media</a><a href="../../seo-content/">SEO &amp; content</a><a href="../../#contact">Contact</a></nav>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle colour theme">Theme</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero small">
+    <span class="crumb"><a href="../../">Portfolio</a> / <a href="../">Copywriting</a> / Recapwell landing page</span>
+    <span class="notice">Fictional brand · real market research · claims are part of the fictional brief</span>
+    <h1>The page the ads land on</h1>
+    <p class="lede">A free-trial landing page for Recapwell, a client-reporting tool for marketing agencies. It picks up the promise each ad makes and carries the visitor to a trial signup, answering their doubts on the way.</p>
+    <div class="meta">
+      <div><b>Page type</b>Paid-traffic landing page</div>
+      <div><b>Goal</b>14-day free-trial signups</div>
+      <div><b>Traffic</b>Search, LinkedIn and Meta ads</div>
+      <div><b>Related</b><a href="../../paid-media/recapwell-campaign/">The ad campaign →</a></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>3</strong><span>hero variants, one per ad angle</span></div>
+      <div class="stat"><strong>10</strong><span>page sections, each with one job</span></div>
+      <div class="stat"><strong>5</strong><span>objections answered before the final CTA</span></div>
+      <div class="stat"><strong>1</strong><span>action on the page: start the trial</span></div>
+    </div>
+    <nav class="toc" aria-label="On this page"><a href="#brief">Brief</a><a href="#page">The page</a><a href="#why">Rationale</a><a href="#match">Message match</a><a href="#test">Test plan</a></nav>
+  </section>
+
+  <!-- BRIEF -->
+  <section id="brief">
+    <span class="eyebrow">01 · Brief</span>
+    <h2>Who arrives here, and what they need to hear</h2>
+    <div class="two">
+      <div class="card">
+        <dl class="kv">
+          <dt>Visitor</dt>
+          <dd>An <b>agency owner or account manager</b> who just clicked an ad about report week, saving time, or reports clients actually read.</dd>
+          <dt>Awareness</dt>
+          <dd><b>Problem-aware.</b> They feel the reporting pain but may not know a tool can fix it this simply. The page has to connect the pain to the product fast.</dd>
+          <dt>Goal</dt>
+          <dd>Start a <b>14-day free trial</b>, no card. One action only: no newsletter, no "book a demo" competing for the click.</dd>
+        </dl>
+      </div>
+      <div class="card">
+        <dl class="kv">
+          <dt>Product facts used on the page</dt>
+          <dd>Connects GA4, Google Ads, Meta Ads, LinkedIn Ads and Search Console. Builds each client's monthly report automatically, adds a plain-English summary on top, sends it on schedule under the agency's brand. <b>$89/month for up to 15 clients.</b></dd>
+          <dt>Constraints</dt>
+          <dd>New brand: <b>no customers, logos or testimonials yet</b>. Proof has to come from the product itself (show the report), the time maths, and a risk-free trial, not from invented quotes.</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE -->
+  <section id="page">
+    <span class="eyebrow">02 · The page</span>
+    <h2>The landing page</h2>
+    <p class="lede">Pins match the rationale in section 03. Switch the hero to see the version shown to visitors from each ad angle.</p>
+
+    <div class="switch" role="group" aria-label="Hero variant">
+      <span>Visitor came from ad:</span>
+      <button type="button" data-v="a" aria-pressed="true">A · Report week</button>
+      <button type="button" data-v="b" aria-pressed="false">B · Time back</button>
+      <button type="button" data-v="c" aria-pressed="false">C · Reports clients read</button>
+    </div>
+
+    <div class="browser">
+      <div class="chrome"><i></i><i></i><i></i><span>recapwell.example/start · concept</span></div>
+      <div class="lp">
+        <div class="nav"><b><i>R</i>Recapwell</b><span class="hide">How it works</span><span class="hide">Pricing</span><span class="hide">FAQ</span><span class="btn-p">Start free trial</span></div>
+
+        <div class="s hero c"><span class="pin">A</span>
+          <div class="in">
+            <span class="eyeb" id="vEye">For agencies with 5–30 clients</span>
+            <h4 class="h1" id="vH">Skip report week this month.</h4>
+            <p class="lead" id="vP">Recapwell builds every client report for you, adds a plain-English summary on top, and sends it on schedule under your brand. Connect your accounts once and you're done.</p>
+            <div class="row"><span class="btn-p" id="vCta">Start my free trial</span><span class="btn-s" id="vCta2">See a sample report</span></div>
+            <div class="micro">14-day free trial · No credit card · Set up in about 10 minutes</div>
+            <div class="logos" aria-label="Integrations"><span>GA4</span><span>Google Ads</span><span>Meta Ads</span><span>LinkedIn Ads</span><span>Search Console</span></div>
+          </div>
+        </div>
+
+        <div class="s"><span class="pin">B</span>
+          <div class="in">
+            <h5 class="h2">The first week of every month shouldn't belong to spreadsheets.</h5>
+            <div class="pain">
+              <div><b>Five logins, one report</b>Export from every platform, paste into slides, fix the chart that broke. Repeat for every client.</div>
+              <div><b>Hours you can't bill</b>At 2–6 hours per client, 15 clients can eat a full working week every month.</div>
+              <div><b>Reports nobody reads</b>Clients skim the first page, then ask "so how are we doing?" on the next call.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="s" id="how"><span class="pin">C</span>
+          <div class="in c">
+            <h5 class="h2">How it works</h5>
+            <div class="steps" style="text-align:left">
+              <div><b>Connect once</b>Link GA4, ad accounts and Search Console for each client. No exports, no spreadsheets.</div>
+              <div><b>Reports build themselves</b>Every month, each client's report is assembled with the right charts and a short written summary.</div>
+              <div><b>Review and send</b>Check it in a minute, tweak anything you like, and it goes out on schedule with your logo.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="s"><span class="pin">D</span>
+          <div class="in diff">
+            <div>
+              <h5 class="h2">Clients don't read dashboards. They read three sentences.</h5>
+              <p>Every Recapwell report opens with a plain-English summary: what changed, why, and what you're doing next. Your client gets the story in ten seconds, and the charts are there when they want detail.</p>
+              <p style="margin:0">Fewer "so how are we doing?" emails. More clients who can see the value of your work.</p>
+            </div>
+            <div class="report" aria-label="Sample report">
+              <div class="rh"><b>Your Agency · Monthly report</b><span>Client: Sample Client Co.</span></div>
+              <div class="sum"><small>Summary</small><p>Leads rose this month, and cost per lead fell. Most of the growth came from Google Search after the new landing page went live. Next month we're testing a second ad angle on Meta.</p></div>
+              <div class="kpis"><div><b>142</b>Leads</div><div><b>$31</b>Cost / lead</div><div><b>4.2%</b>Conv. rate</div></div>
+              <div class="bars" aria-hidden="true"><i style="height:40%"></i><i style="height:55%"></i><i style="height:48%"></i><i style="height:62%"></i><i style="height:70%"></i><i class="hi" style="height:90%"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="s"><span class="pin">E</span>
+          <div class="in">
+            <h5 class="h2">What changes for your agency</h5>
+            <div class="benefits">
+              <div><b>Your team gets report week back</b>Hours spent copying numbers go back into strategy and client work.</div>
+              <div><b>Reports go out on time, every time</b>Scheduled sending means no more "sorry, the report's coming Friday".</div>
+              <div><b>Your brand, not ours</b>Your logo, your colours, sent from your domain. Clients never see Recapwell.</div>
+              <div><b>Every channel in one place</b>Search, social ads and analytics side by side, in the same format for every client.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="s"><span class="pin">F</span>
+          <div class="in">
+            <h5 class="h2">How much time is reporting costing you?</h5>
+            <div class="calc">
+              <div>
+                <label for="cl">Clients you report to <span id="clv">15</span></label>
+                <input id="cl" type="range" min="1" max="30" value="15">
+                <label for="hr" style="margin-top:14px">Hours per report today <span id="hrv">3</span></label>
+                <input id="hr" type="range" min="1" max="8" value="3">
+              </div>
+              <div class="out"><strong id="saved">43</strong><small>hours back every month (estimate)</small><p class="micro" style="margin-top:10px">Assumes about 10 minutes per report to review with Recapwell.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="s"><span class="pin">G</span>
+          <div class="in">
+            <h5 class="h2">Built with agencies like yours</h5>
+            <div class="slots">
+              <div class="slot"><em>Slot · beta-user quote</em><div class="sk" style="width:92%"></div><div class="sk" style="width:80%"></div><div class="sk" style="width:55%"></div><p style="margin:10px 0 0;font-size:.8rem">Name · agency · clients · hours saved</p></div>
+              <div class="slot"><em>Slot · beta-user quote</em><div class="sk" style="width:88%"></div><div class="sk" style="width:75%"></div><div class="sk" style="width:60%"></div><p style="margin:10px 0 0;font-size:.8rem">Best quote: a specific before / after</p></div>
+            </div>
+            <p style="margin:16px 0 0">Until beta quotes exist, the free trial does the proving: <b style="color:#141a2e">connect one client and see their first report before you pay anything.</b></p>
+          </div>
+        </div>
+
+        <div class="s c" id="pricing"><span class="pin">H</span>
+          <div class="in">
+            <h5 class="h2">One plan. Everything included.</h5>
+            <div class="price">
+              <div class="amt">$89 <small>/ month</small></div>
+              <p style="margin:6px 0 0;font-size:.9rem">Up to 15 clients. Compare that with the hours you just calculated.</p>
+              <ul><li>Automatic monthly reports for every client</li><li>Plain-English summary on every report</li><li>White-label: your logo, your domain</li><li>All five integrations</li><li>Unlimited team members</li></ul>
+              <span class="btn-p">Start my free trial</span>
+              <p class="micro" style="text-align:center">14 days free · No credit card · Cancel anytime</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="s"><span class="pin">I</span>
+          <div class="in">
+            <h5 class="h2">Questions agencies ask before trying</h5>
+            <details open><summary>Can I edit a report before it goes out?</summary><p>Yes. Every report waits for your review by default. Change the summary, hide a chart, add a note, then send. You can switch to fully automatic sending once you trust it.</p></details>
+            <details><summary>Will my clients see the Recapwell name?</summary><p>No. Reports use your logo and colours and are sent from your own email domain.</p></details>
+            <details><summary>Which platforms does it connect to?</summary><p>GA4, Google Ads, Meta Ads, LinkedIn Ads and Google Search Console. Each client's accounts are connected once.</p></details>
+            <details><summary>Is my clients' data safe?</summary><p>Recapwell only asks for read-only access. It can see performance numbers but can't change campaigns or settings.</p></details>
+            <details><summary>What happens when the trial ends?</summary><p>Nothing, unless you choose a plan. There's no card on file, so you're never charged by surprise.</p></details>
+          </div>
+        </div>
+
+        <div class="s final c"><span class="pin">J</span>
+          <div class="in">
+            <h5 class="h2">Send this month's reports without the report week.</h5>
+            <p class="lead" style="color:#d9e2ff">Connect your first client in about 10 minutes and see their report before you pay anything.</p>
+            <span class="btn-p">Start my free trial</span>
+            <div class="micro">14 days free · No credit card</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RATIONALE -->
+  <section id="why">
+    <span class="eyebrow">03 · Rationale</span>
+    <h2>Why each section is there</h2>
+    <div class="grid" style="grid-template-columns:1fr;gap:14px">
+      <div class="card rat"><span class="pin">A</span><div><span class="fw">Message match</span><span class="fw">Single CTA</span><p>The headline repeats the promise of the ad the visitor clicked, so they know instantly they're in the right place. The subheadline explains the mechanism in one sentence. The CTA says "my free trial" (first person, reward named), and the microcopy removes three objections: cost, card, and setup effort. Integration names act as early credibility for an unknown brand.</p></div></div>
+      <div class="card rat"><span class="pin">B</span><div><span class="fw">PAS</span><span class="fw">Voice of customer</span><p>Problem and agitation in the agency's own terms: five logins, unbillable hours, reports nobody reads. The "2–6 hours per client" range comes from the research and makes the cost concrete.</p></div></div>
+      <div class="card rat"><span class="pin">C</span><div><span class="fw">Reduce effort</span><p>Three steps make the solution feel easy. "Review and send" quietly answers the fear of losing control before anyone asks.</p></div></div>
+      <div class="card rat"><span class="pin">D</span><div><span class="fw">Differentiation</span><span class="fw">Show, don't tell</span><p>The plain-English summary is the one thing competitors don't lead with, so it gets its own section, and the page shows a sample report instead of describing one. Showing the product is the strongest proof a new brand has.</p></div></div>
+      <div class="card rat"><span class="pin">E</span><div><span class="fw">Benefits over features</span><p>Each feature is written as what changes for the agency: time back, reliability, their brand, one view.</p></div></div>
+      <div class="card rat"><span class="pin">F</span><div><span class="fw">Personalised value</span><p>The calculator lets visitors put in their own numbers. Seeing "43 hours back every month" for their agency is more persuasive than any claim, and it sets up the price as small by comparison.</p></div></div>
+      <div class="card rat"><span class="pin">G</span><div><span class="fw">Honest proof</span><span class="fw">Risk reversal</span><p>No invented testimonials. Clearly marked slots show where beta quotes will go, and the trial itself becomes the proof: see a real report before paying.</p></div></div>
+      <div class="card rat"><span class="pin">H</span><div><span class="fw">Anchoring</span><p>One plan removes choice paralysis. Placed right after the calculator, the price line points back to the visitor's own number, so $89 is judged against the hours they just saw, not against other tools.</p></div></div>
+      <div class="card rat"><span class="pin">I</span><div><span class="fw">Objection handling</span><p>The five questions a cautious agency owner asks: control, branding, compatibility, data safety, and billing. Answering them right before the final CTA removes the last reasons to hesitate.</p></div></div>
+      <div class="card rat"><span class="pin">J</span><div><span class="fw">Closing CTA</span><p>Restates the core promise and the first small step ("connect your first client in about 10 minutes"), so the action feels easy rather than like a big commitment.</p></div></div>
+    </div>
+  </section>
+
+  <!-- MESSAGE MATCH -->
+  <section id="match">
+    <span class="eyebrow">04 · Message match</span>
+    <h2>One page, three doors in</h2>
+    <p class="lede">Each ad angle from the <a href="../../paid-media/recapwell-campaign/">paid media campaign</a> lands on a hero that repeats its promise. Everything below the hero stays the same, so tests compare the message, not the whole page.</p>
+    <div class="tblwrap">
+      <table class="tbl">
+        <thead><tr><th>Ad angle</th><th>Hero headline</th><th>Hero CTA</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>A · Report week</td><td>Skip report week this month.</td><td>Start my free trial</td><td>Names the pain the ad named. Urgency is built in: "this month".</td></tr>
+          <tr><td>B · Time back</td><td>Client reports that build and send themselves.</td><td>Get my time back</td><td>Leads with the outcome owners care about: team capacity.</td></tr>
+          <tr><td>C · Reports clients read</td><td>Reports your clients will actually read.</td><td>See a sample report</td><td>The visitor is curious about the summary, so the first CTA shows it before asking for a trial.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- TEST -->
+  <section id="test">
+    <span class="eyebrow">05 · Test plan</span>
+    <h2>What to test first</h2>
+    <p class="lede">Primary metric: trial signups per visitor, read separately for each ad angle. These are hypotheses, not results.</p>
+    <div class="tblwrap">
+      <table class="tbl">
+        <thead><tr><th>#</th><th>Test</th><th>Hypothesis</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Calculator (F) present vs. removed</td><td>Seeing their own hours lost makes the $89 price feel small and lifts signups.</td></tr>
+          <tr><td>2</td><td>Hero CTA: "Start my free trial" vs. "See a sample report"</td><td>For cold Meta traffic, showing the report first may convert better than asking for a trial straight away.</td></tr>
+          <tr><td>3</td><td>Sample report (D) moved up, directly under the hero</td><td>The product itself is the strongest proof for a new brand, so showing it earlier keeps more visitors scrolling.</td></tr>
+          <tr><td>4</td><td>FAQ (I) open vs. collapsed</td><td>Visible answers to "can I edit before it sends?" reduce hesitation for agency owners worried about control.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Recapwell is a fictional brand created for this portfolio. Product features, prices and the sample report are part of the fictional brief; the agency-reporting research is real. Any resemblance to a real company is unintended. · © 2026 Nijandhan · <a href="../">Back to copywriting</a></div>
+</footer>
+<script src="../../assets/theme.js"></script>
+<script>
+(function(){
+  // hero variants per ad angle
+  var V={
+    a:{eye:'For agencies with 5–30 clients',h:'Skip report week this month.',p:"Recapwell builds every client report for you, adds a plain-English summary on top, and sends it on schedule under your brand. Connect your accounts once and you're done.",cta:'Start my free trial',cta2:'See a sample report'},
+    b:{eye:'Automatic client reporting for agencies',h:'Client reports that build and send themselves.',p:'Connect GA4, Google Ads and Meta once. Every month after that, each client gets a branded report with a plain-English summary, without anyone on your team touching a spreadsheet.',cta:'Get my time back',cta2:'See a sample report'},
+    c:{eye:'Client reporting, rewritten',h:'Reports your clients will actually read.',p:"Every Recapwell report opens with three plain-English sentences: what changed, why, and what's next. The charts are there when clients want detail. The summary is what they'll remember.",cta:'See a sample report',cta2:'Start free trial'}
+  };
+  var btns=document.querySelectorAll('.switch button');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    var v=V[b.dataset.v];
+    document.getElementById('vEye').textContent=v.eye;
+    document.getElementById('vH').textContent=v.h;
+    document.getElementById('vP').textContent=v.p;
+    document.getElementById('vCta').textContent=v.cta;
+    document.getElementById('vCta2').textContent=v.cta2;
+    btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+  });});
+  // time calculator
+  var cl=document.getElementById('cl'), hr=document.getElementById('hr');
+  function calc(){
+    document.getElementById('clv').textContent=cl.value;
+    document.getElementById('hrv').textContent=hr.value;
+    var saved=cl.value*(hr.value-1/6);
+    document.getElementById('saved').textContent=Math.round(saved);
+  }
+  cl.addEventListener('input',calc); hr.addEventListener('input',calc); calc();
+})();
+</script>
+</body>
+</html>
