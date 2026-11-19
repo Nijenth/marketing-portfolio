@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recapwell Content Strategy · Nijandhan</title>
+<meta name="description" content="SEO and content strategy case study for Recapwell, a fictional client-reporting tool: search landscape, keyword map by funnel stage, topic clusters, a 90-day plan and a full article brief.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+body{--accent:var(--c3);--accent-soft:var(--c3-soft)}
+.notice{display:inline-flex;gap:8px;align-items:center;background:var(--c3-soft);color:var(--c3);border-radius:999px;padding:6px 12px;font-size:.8rem;font-weight:600;margin-bottom:1.2rem}
+.meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:26px;color:var(--ink-2);font-size:.9rem}
+.meta b{color:var(--ink);display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px}
+.stats{display:grid;gap:14px;margin-top:34px}
+@media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.stat strong{display:block;font-family:Fraunces,serif;font-size:1.7rem;color:var(--c3);line-height:1.1}
+.stat span{font-size:.88rem;color:var(--ink-2)}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.toc a{font-size:.82rem;text-decoration:none;color:var(--ink-2);border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px}
+.two{display:grid;gap:16px;margin-top:24px}
+@media(min-width:800px){.two{grid-template-columns:1fr 1fr}}
+.kv dt{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600}
+.kv dd{margin:.15rem 0 1rem;color:var(--ink-2)}
+.kv dd b{color:var(--ink)}
+.note{font-size:.84rem;color:var(--muted)}
+.find{border-left:3px solid var(--c3);padding:2px 0 2px 14px;margin:0 0 16px}
+.find b{color:var(--ink);display:block;margin-bottom:2px}
+.find p{margin:0;color:var(--ink-2);font-size:.94rem}
+.card h3.t{font-family:Inter,sans-serif;font-size:1rem;font-weight:700;margin-bottom:.6rem}
+/* tables */
+.tblwrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:6px 14px;margin-top:20px}
+.tbl{width:100%;border-collapse:collapse;font-size:.9rem;min-width:640px}
+.tbl th,.tbl td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.tbl th{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.tbl td{color:var(--ink-2)}
+.tbl td:first-child{color:var(--ink);font-weight:600}
+.tbl tr.grp td{background:var(--surface-2);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.pri{display:inline-block;font-size:.7rem;font-weight:700;border-radius:6px;padding:2px 8px;white-space:nowrap}
+.pri.h{background:var(--c3-soft);color:var(--c3)}
+.pri.m{background:var(--c2-soft);color:var(--c2)}
+.pri.l{background:var(--surface-2);color:var(--muted)}
+/* clusters */
+.clusters{display:grid;gap:16px;margin-top:24px}
+@media(min-width:820px){.clusters{grid-template-columns:1fr 1fr}}
+.cluster{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;border-top:4px solid var(--c3)}
+.cluster .lbl{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c3)}
+.cluster h3{font-size:1.2rem;margin:.4rem 0 .7rem}
+.pillar{background:var(--c3-soft);border-radius:10px;padding:10px 12px;font-size:.92rem;color:var(--ink);margin-bottom:10px}
+.pillar small{display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c3);margin-bottom:2px}
+.cluster ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:.9rem}
+.cluster li{margin-bottom:5px}
+.cluster .why{font-size:.84rem;color:var(--muted);margin:12px 0 0}
+/* timeline */
+.months{display:grid;gap:16px;margin-top:24px}
+@media(min-width:820px){.months{grid-template-columns:repeat(3,1fr)}}
+.month{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
+.month .m{font-family:Fraunces,serif;font-size:1.5rem;color:var(--c3);line-height:1}
+.month h3{font-family:Inter,sans-serif;font-size:1rem;font-weight:700;margin:.5rem 0 .6rem}
+.month ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:.9rem}
+.month li{margin-bottom:5px}
+/* brief */
+.brief{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:24px}
+.brief .bh{padding:22px 24px;border-bottom:1px solid var(--line);background:var(--c3-soft)}
+.brief .bh small{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c3)}
+.brief .bh h3{font-size:clamp(1.25rem,2.6vw,1.6rem);margin:.4rem 0 0}
+.brief .bg{display:grid;gap:0}
+@media(min-width:820px){.brief .bg{grid-template-columns:1fr 1.4fr}}
+.brief .side{padding:22px 24px;border-bottom:1px solid var(--line)}
+@media(min-width:820px){.brief .side{border-bottom:0;border-right:1px solid var(--line)}}
+.brief .main{padding:22px 24px}
+.outline{list-style:none;margin:0;padding:0;counter-reset:h}
+.outline > li{padding:12px 0;border-bottom:1px solid var(--line)}
+.outline > li:last-child{border-bottom:0}
+.outline > li > b{display:block;color:var(--ink)}
+.outline > li > b::before{counter-increment:h;content:"H2 · ";color:var(--c3);font-size:.75rem;letter-spacing:.06em}
+.outline p{margin:4px 0 0;font-size:.9rem;color:var(--ink-2)}
+.outline .cta{display:inline-block;margin-top:6px;font-size:.78rem;font-weight:600;color:var(--c1);background:var(--c1-soft);border-radius:6px;padding:2px 8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chips span{font-size:.8rem;background:var(--surface-2);border-radius:6px;padding:3px 8px;color:var(--ink-2)}
+</style>
+</head>
+<body class="r3">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../../">Nijandhan</a>
+    <nav><a href="../../copywriting/">Copywriting</a><a href="../../paid-media/">Paid media</a><a href="../" aria-current="page">SEO &amp; content</a><a href="../../#contact">Contact</a></nav>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle colour theme">Theme</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero small">
+    <span class="crumb"><a href="../../">Portfolio</a> / <a href="../">SEO &amp; content</a> / Recapwell</span>
+    <span class="notice">Fictional brand · real search research · no paid keyword tools used</span>
+    <h1>Getting a new reporting tool found on Google</h1>
+    <p class="lede">An SEO and content strategy for Recapwell, a client-reporting tool for agencies. A brand-new website can't win the big keywords yet, so the plan targets the searches it <em>can</em> win, and turns readers into free-trial signups.</p>
+    <div class="meta">
+      <div><b>Goal</b>Free-trial signups from search</div>
+      <div><b>Starting point</b>New domain, no rankings</div>
+      <div><b>Timeframe</b>First 90 days</div>
+      <div><b>Related</b><a href="../../paid-media/recapwell-campaign/">Ads</a> · <a href="../../copywriting/recapwell-landing-page/">Landing page</a></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>24</strong><span>keywords mapped to funnel stages</span></div>
+      <div class="stat"><strong>4</strong><span>topic clusters with a pillar page each</span></div>
+      <div class="stat"><strong>10</strong><span>pieces of content in the 90-day plan</span></div>
+      <div class="stat"><strong>1</strong><span>full article brief, ready for a writer</span></div>
+    </div>
+    <nav class="toc" aria-label="On this page"><a href="#brief">Brief</a><a href="#landscape">Search landscape</a><a href="#keywords">Keyword map</a><a href="#clusters">Topic clusters</a><a href="#plan">90-day plan</a><a href="#article">Article brief</a><a href="#measure">Measurement</a></nav>
+  </section>
+
+  <!-- BRIEF -->
+  <section id="brief">
+    <span class="eyebrow">01 · Brief</span>
+    <h2>The situation</h2>
+    <div class="two">
+      <div class="card">
+        <dl class="kv">
+          <dt>Product (fictional)</dt>
+          <dd>Recapwell builds each client's monthly report automatically and opens it with a <b>plain-English summary</b>. $89/month for up to 15 clients, 14-day free trial.</dd>
+          <dt>Audience</dt>
+          <dd>Owners and account managers at <b>agencies with 5–30 clients</b>, searching for ways to make reporting faster or better.</dd>
+          <dt>Goal</dt>
+          <dd>Organic visitors who start a free trial, directly or after reading content.</dd>
+        </dl>
+      </div>
+      <div class="card">
+        <h3 class="t">The constraint that shapes everything</h3>
+        <p style="color:var(--ink-2)">A new website has <b style="color:var(--ink)">no authority with Google yet</b>. Established tools and review sites already own the biggest searches like "client reporting software", and that won't change in 90 days.</p>
+        <p style="color:var(--ink-2);margin:0">So the strategy is: <b style="color:var(--ink)">win specific, lower-competition searches first</b>, build topical authority around one theme the competition under-serves, and let paid ads cover the big keywords in the meantime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANDSCAPE -->
+  <section id="landscape">
+    <span class="eyebrow">02 · Search landscape</span>
+    <h2>What Google shows today</h2>
+    <p class="lede">Before choosing keywords, look at who already ranks and what kind of pages win.</p>
+    <div class="two">
+      <div class="card">
+        <div class="find"><b>"Best client reporting software" → comparison lists</b><p>The results are almost all "best tools" listicles, and most are written by reporting-tool companies about their own category. Google expects a comparison page for this search, not a product page.</p></div>
+        <div class="find"><b>"How to write a client report" → guides and templates</b><p>How-to guides and downloadable templates dominate. Readers want something they can use today.</p></div>
+        <div class="find"><b>One theme repeats everywhere</b><p>Guide after guide gives the same advice: explain results in plain language, tie every number to the client's goals, and end with next steps. Plenty of advice, very few tools built around it.</p></div>
+      </div>
+      <div class="card">
+        <h3 class="t">What this means for Recapwell</h3>
+        <ul style="margin:0 0 1rem;padding-left:18px;color:var(--ink-2);font-size:.95rem">
+          <li style="margin-bottom:8px"><b style="color:var(--ink)">Own the "explaining results" theme.</b> It's what readers are told to do, and it's exactly what the plain-English summary does. Content and product tell the same story.</li>
+          <li style="margin-bottom:8px"><b style="color:var(--ink)">Publish useful templates.</b> They match what searchers want and give a natural reason to try the tool.</li>
+          <li><b style="color:var(--ink)">Get onto the existing listicles,</b> not just compete with them. Outreach to independent review sites can put Recapwell in front of buyers long before its own comparison page ranks.</li>
+        </ul>
+        <p class="note" style="margin:0">Research: manual Google searches and a read of the top results, November 2026, including guides from <a href="https://www.swydo.com/blog/best-client-reporting-software/">Swydo</a>, <a href="https://thedigitalprojectmanager.com/tools/best-client-reporting-software/">The Digital Project Manager</a>, <a href="https://dashthis.com/blog/monthly-marketing-reports-for-clients/">DashThis</a> and <a href="https://en.adriel.com/blog/monthly-marketing-report">Adriel</a>. Search volumes and difficulty scores need a paid tool (Ahrefs, Semrush) or Google Keyword Planner, and are the first thing to validate on a real project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEYWORDS -->
+  <section id="keywords">
+    <span class="eyebrow">03 · Keyword map</span>
+    <h2>Every keyword has a job in the funnel</h2>
+    <p class="lede">Grouped by how close the searcher is to buying. Priority combines <b>business value</b> (how likely the reader is to need Recapwell) with <b>winnability</b> (how realistic ranking is for a new site).</p>
+    <div class="tblwrap">
+      <table class="tbl">
+        <thead><tr><th>Keyword</th><th>Searcher wants</th><th>Content type</th><th>Priority</th></tr></thead>
+        <tbody>
+          <tr class="grp"><td colspan="4">Ready to choose a tool (bottom of funnel)</td></tr>
+          <tr><td>client reporting software</td><td>A list of tools to compare</td><td>Comparison page (+ paid ads meanwhile)</td><td><span class="pri m">Medium · hard to win</span></td></tr>
+          <tr><td>client reporting tool for small agencies</td><td>A tool that fits a small team</td><td>Comparison page</td><td><span class="pri h">High</span></td></tr>
+          <tr><td>white label marketing reports</td><td>Reports under their own brand</td><td>Feature page</td><td><span class="pri h">High</span></td></tr>
+          <tr><td>[competitor] alternative</td><td>A cheaper or simpler option</td><td>"Alternatives" page per competitor</td><td><span class="pri h">High</span></td></tr>
+          <tr><td>automated marketing reports for clients</td><td>A tool that does it for them</td><td>Feature page</td><td><span class="pri h">High</span></td></tr>
+          <tr><td>client reporting software pricing</td><td>To compare costs</td><td>Pricing page</td><td><span class="pri m">Medium</span></td></tr>
+          <tr class="grp"><td colspan="4">Looking for a better way (middle of funnel)</td></tr>
+          <tr><td>how to automate client reporting</td><td>Steps to stop doing it by hand</td><td>Pillar guide</td><td><span class="pri h">High</span></td></tr>
+          <tr><td>monthly marketing report template</td><td>A template to use today</td><td>Template + guide</td><td><span class="pri h">High</span></td></tr>
+          <tr><td>seo report template for clients</td><td>A ready-made SEO report</td><td>Template</td><td><span class="pri m">Medium</span></td></tr>
+          <tr><td>google ads report template for clients</td><td>A ready-made PPC report</td><td>Template</td><td><span class="pri m">Medium</span></td></tr>
+          <tr><td>how to write a monthly client report</td><td>A clear structure to follow</td><td>Guide (brief below)</td><td><span class="pri h">High</span></td></tr>
+          <tr><td>how to reduce time spent on client reporting</td><td>Time back</td><td>Guide</td><td><span class="pri h">High</span></td></tr>
+          <tr><td>client reporting dashboard vs report</td><td>Which format to use</td><td>Guide</td><td><span class="pri m">Medium</span></td></tr>
+          <tr class="grp"><td colspan="4">Learning the basics (top of funnel)</td></tr>
+          <tr><td>how to explain marketing results to clients</td><td>Words for difficult conversations</td><td>Pillar guide</td><td><span class="pri h">High · differentiator</span></td></tr>
+          <tr><td>what to include in a client report</td><td>A checklist</td><td>Guide</td><td><span class="pri m">Medium</span></td></tr>
+          <tr><td>how to report bad results to clients</td><td>How to handle a bad month</td><td>Guide</td><td><span class="pri h">High · differentiator</span></td></tr>
+          <tr><td>marketing kpis to report to clients</td><td>Which numbers matter</td><td>Guide</td><td><span class="pri m">Medium</span></td></tr>
+          <tr><td>client reporting best practices</td><td>General advice</td><td>Guide</td><td><span class="pri l">Low · crowded</span></td></tr>
+          <tr><td>how often should agencies send reports</td><td>A quick answer</td><td>Short answer post</td><td><span class="pri l">Low</span></td></tr>
+          <tr><td>executive summary for marketing report</td><td>How to write the summary</td><td>Guide + examples</td><td><span class="pri h">High · differentiator</span></td></tr>
+          <tr><td>client retention for marketing agencies</td><td>Keep clients longer</td><td>Guide</td><td><span class="pri m">Medium</span></td></tr>
+          <tr><td>how to show roi to marketing clients</td><td>Prove their value</td><td>Guide</td><td><span class="pri m">Medium</span></td></tr>
+          <tr><td>agency client communication tips</td><td>Better relationships</td><td>Guide</td><td><span class="pri l">Low</span></td></tr>
+          <tr><td>marketing report examples</td><td>To see real reports</td><td>Example gallery</td><td><span class="pri m">Medium</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top:12px">"[competitor] alternative" stands for one page per main competitor, a standard and high-converting format for software. Real brand names would be added on a real engagement.</p>
+  </section>
+
+  <!-- CLUSTERS -->
+  <section id="clusters">
+    <span class="eyebrow">04 · Topic clusters</span>
+    <h2>Four clusters, linked together</h2>
+    <p class="lede">Each cluster has one in-depth pillar page and shorter supporting articles that link to it. This shows Google that the site is a real authority on the topic, not a collection of one-off posts.</p>
+    <div class="clusters">
+      <div class="cluster">
+        <span class="lbl">Cluster 1 · Differentiator</span>
+        <h3>Explaining results to clients</h3>
+        <div class="pillar"><small>Pillar</small>How to explain marketing results to clients (with examples)</div>
+        <ul><li>How to report bad results to clients</li><li>How to write an executive summary for a marketing report</li><li>How to show ROI to marketing clients</li></ul>
+        <p class="why">The theme every guide recommends and no tool owns. It's also the product's main feature, so readers meet the idea before they meet the tool.</p>
+      </div>
+      <div class="cluster">
+        <span class="lbl">Cluster 2 · Problem</span>
+        <h3>Saving time on reporting</h3>
+        <div class="pillar"><small>Pillar</small>How to automate client reporting: a step-by-step guide</div>
+        <ul><li>How to reduce time spent on client reporting</li><li>Client reporting dashboard vs report</li><li>How often should agencies send reports</li></ul>
+        <p class="why">Captures agencies feeling the "report week" pain, the same angle as the ads.</p>
+      </div>
+      <div class="cluster">
+        <span class="lbl">Cluster 3 · Templates</span>
+        <h3>Report templates</h3>
+        <div class="pillar"><small>Pillar</small>Monthly marketing report template (free download)</div>
+        <ul><li>SEO report template for clients</li><li>Google Ads report template for clients</li><li>Marketing report examples</li></ul>
+        <p class="why">Templates match what searchers want and work as lead magnets: download → email → trial.</p>
+      </div>
+      <div class="cluster">
+        <span class="lbl">Cluster 4 · Buying</span>
+        <h3>Tools &amp; comparisons</h3>
+        <div class="pillar"><small>Pillar</small>Best client reporting tools for small agencies</div>
+        <ul><li>[Competitor] alternatives (one page each)</li><li>White-label marketing reports</li><li>Client reporting software pricing compared</li></ul>
+        <p class="why">Closest to the purchase. Hard to rank early, so it's paired with outreach to existing review sites.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAN -->
+  <section id="plan">
+    <span class="eyebrow">05 · 90-day plan</span>
+    <h2>What gets published, in what order</h2>
+    <p class="lede">Bottom-of-funnel pages first (they convert even with little traffic), then the differentiator cluster to build authority, then templates to grow the email list.</p>
+    <div class="months">
+      <div class="month"><span class="m">Month 1</span><h3>Pages that convert</h3><ul><li>Best client reporting tools for small agencies</li><li>White-label marketing reports (feature page)</li><li>2 competitor alternative pages</li><li>Technical setup: site speed, sitemap, Search Console</li></ul></div>
+      <div class="month"><span class="m">Month 2</span><h3>Own the differentiator</h3><ul><li>Pillar: How to explain marketing results to clients</li><li>How to write a monthly client report (brief below)</li><li>How to report bad results to clients</li><li>Outreach to 10 independent review sites and newsletters</li></ul></div>
+      <div class="month"><span class="m">Month 3</span><h3>Templates &amp; time-saving</h3><ul><li>Monthly marketing report template (lead magnet)</li><li>Pillar: How to automate client reporting</li><li>How to write an executive summary for a marketing report</li><li>Refresh month-1 pages using Search Console data</li></ul></div>
+    </div>
+    <p class="note" style="margin-top:14px">SEO compounds slowly: new pages on a new site often take several months to settle into their real ranking. That's why paid ads run alongside, and why month-1 pages are chosen for conversion, not traffic.</p>
+  </section>
+
+  <!-- ARTICLE BRIEF -->
+  <section id="article">
+    <span class="eyebrow">06 · Article brief</span>
+    <h2>One article, planned in full</h2>
+    <p class="lede">The brief a writer would receive. It connects a high-priority keyword to the product's main idea without turning the article into an advert.</p>
+    <div class="brief">
+      <div class="bh"><small>Article brief · Cluster 1</small><h3>How to Write a Monthly Client Report Your Clients Will Actually Read</h3></div>
+      <div class="bg">
+        <div class="side">
+          <dl class="kv">
+            <dt>Primary keyword</dt><dd><b>how to write a monthly client report</b></dd>
+            <dt>Secondary keywords</dt><dd><div class="chips"><span>monthly marketing report</span><span>what to include in a client report</span><span>executive summary marketing report</span></div></dd>
+            <dt>Reader</dt><dd>Account manager at a small agency who writes 5–30 reports a month and suspects clients don't read them.</dd>
+            <dt>Search intent</dt><dd>A clear structure they can apply to next month's reports.</dd>
+            <dt>Angle</dt><dd><b>Lead with the story, not the dashboard.</b> Most guides list sections to include. This one shows how to write the three sentences at the top that clients actually read.</dd>
+            <dt>Length</dt><dd>~1,800 words, with 2 before/after examples and a downloadable template.</dd>
+            <dt>Internal links</dt><dd>Pillar (explaining results), executive summary guide, report template, <a href="../../copywriting/recapwell-landing-page/">free-trial page</a>.</dd>
+          </dl>
+        </div>
+        <div class="main">
+          <ol class="outline">
+            <li><b>Why most client reports go unread</b><p>Open with the familiar scene: hours of work, a client who skims page one and asks "so how are we doing?"</p></li>
+            <li><b>Start with a three-sentence summary</b><p>What changed, why, and what's next. Two before/after examples: a number-dump vs. a plain-English summary.</p><span class="cta">Soft CTA: "Recapwell writes this summary for you"</span></li>
+            <li><b>Choose metrics that match the client's goals</b><p>Leads and cost per lead over impressions. A short table by service type (SEO, PPC, social).</p></li>
+            <li><b>Explain the "why" behind each number</b><p>Turn every figure into a cause and a decision. How to handle a bad month honestly.</p></li>
+            <li><b>End with next steps the client can approve</b><p>Close every report with 2–3 actions, so the report leads to a conversation, not silence.</p></li>
+            <li><b>A template you can use this month</b><p>The structure as a downloadable template.</p><span class="cta">Lead magnet: template download → email → trial</span></li>
+            <li><b>Make it faster: automate the data, keep the story</b><p>Where tools help, and why the summary is the part worth protecting.</p><span class="cta">Main CTA: start a 14-day free trial</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEASURE -->
+  <section id="measure">
+    <span class="eyebrow">07 · Measurement</span>
+    <h2>How we'll know it's working</h2>
+    <div class="tblwrap">
+      <table class="tbl">
+        <thead><tr><th>Metric</th><th>Why it matters</th><th>When to judge it</th></tr></thead>
+        <tbody>
+          <tr><td>Impressions &amp; average position</td><td>The earliest sign Google is starting to trust the site</td><td>From month 1 (Search Console)</td></tr>
+          <tr><td>Organic clicks to priority pages</td><td>Shows which keywords actually bring visitors</td><td>From month 2–3</td></tr>
+          <tr><td>Template downloads</td><td>Email sign-ups from readers not ready to try yet</td><td>From month 3</td></tr>
+          <tr><td>Trials from organic search</td><td>The real goal: readers who become users</td><td>Month 3 onward</td></tr>
+          <tr><td>Assisted trials</td><td>Readers who came back later through an ad or directly. Content often helps without getting the last click</td><td>Month 3 onward</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top:12px">Each month: pages that get impressions but few clicks get new titles and descriptions; pages ranking on page 2 get expanded and more internal links.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Recapwell is a fictional brand created for this portfolio. Any resemblance to a real company is unintended. The search landscape research is real (November 2026); keyword priorities are judgement calls, not tool data. · © 2026 Nijandhan · <a href="../">Back to SEO &amp; content</a></div>
+</footer>
+<script src="../../assets/theme.js"></script>
+</body>
+</html>
